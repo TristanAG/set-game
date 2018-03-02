@@ -1,6 +1,10 @@
 h3 {
   color: #918498; }
 
+.card-two {
+  width: 188px;
+  max-width: 100%; }
+
 .card {
   border: 2px solid #968a9d;
   background-color: #efedf0;

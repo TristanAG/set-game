@@ -13,8 +13,12 @@ class Card extends React.Component{
 
   render(){
     return(
-      <div className='card' onClick={this.showInfo}>
-        <p>{this.props.type}</p>
+      <div onClick={this.showInfo}>
+          <img
+            className="card-two"
+            src={this.props.asset}
+            alt={this.props.altText}
+          />
       </div>
     )
   }

@@ -4,6 +4,15 @@ h3{
   color: $color;
 }
 
+.card-two{
+  // -ms-transform: rotate(90deg); /* IE 9 */
+  //  -webkit-transform: rotate(90deg); /* Safari */
+  //  transform-origin: bottom right;
+  width: 188px;
+  max-width: 100%;
+
+}
+
 .card{
   border: 2px solid lighten($color, 2%);
   background-color: lighten($color, 38%);

@@ -17,14 +17,21 @@ class App extends React.Component {
     }
   }
 
-  showSelected( {type} ){
-    console.log(type)
+  showSelected( props ){
+    console.log(props.info)
+
+    //alright, so showSelected actually needs to be a method that takes in the cards and analyzes them.
+    //within the card itself is when a hover state will be applied
+
     this.setState((prevState) => ({
-      message: type,
-      selectedCards: prevState.selectedCards.concat(type)
+      selectedCards: prevState.selectedCards.concat(props.info),
+      message: this.state.selectedCards
     }))
-    console.log(this.state.selectedCards)
+
   }
+
+  //what you need to do is create a method that .. or rather, a component that acts as a display of the selected cards
+  //you're grabbing that data, because you're going to need to do stuff with it
 
   render() {
     return (
@@ -44,13 +51,13 @@ class App extends React.Component {
         <div className='row'>
           <div className='columns six' style={{}}>
             <Card showSelected={this.showSelected} asset={OneDiamondDashedRed} alt='terp' info='OneDiamondDashedRed'/>
-            <Card showSelected={this.showSelected} asset={OneDiamondEmptyRed} alt='terp'/>
-            <Card showSelected={this.showSelected} asset={OneDiamondFilledRed} alt='terp'/>
+            <Card showSelected={this.showSelected} asset={OneDiamondEmptyRed} alt='terp' info='OneDiamondEmptyRed' />
+            <Card showSelected={this.showSelected} asset={OneDiamondFilledRed} alt='terp' info='OneDiamondFilledRed'/>
 
           </div>
           <div className='columns six'>
 
-            <p>{this.state.message}</p>
+            <p>{this.state.selectedCards}</p>
             {this.state.selectedCards.length === 3 && <p>got three</p>}
           </div>
         </div>

@@ -4,6 +4,10 @@ h3{
   color: $color;
 }
 
+.hotdogs{
+  border: 2px solid green;
+}
+
 .card-two{
   // -ms-transform: rotate(90deg); /* IE 9 */
   //  -webkit-transform: rotate(90deg); /* Safari */
@@ -12,6 +16,8 @@ h3{
   max-width: 100%;
 
 }
+
+
 
 .card{
   border: 2px solid lighten($color, 2%);

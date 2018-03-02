@@ -1,6 +1,9 @@
 h3 {
   color: #918498; }
 
+.hotdogs {
+  border: 2px solid green; }
+
 .card-two {
   width: 188px;
   max-width: 100%; }

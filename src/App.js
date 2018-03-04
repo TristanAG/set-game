@@ -21,7 +21,6 @@ class App extends React.Component {
   constructor(props){
     super(props)
     this.handleSelected = this.handleSelected.bind(this)
-
     this.state = {
       fill: '$$$',
       amount: '$$$',
@@ -29,26 +28,6 @@ class App extends React.Component {
       shape: '$$$',
       hand: []
     }
-
-    // this.deck = [
-    //   {
-    //     amount: 1,
-    //     shape: 'diamond',
-    //     fill: 'dashed',
-    //     color: 'red',
-    //     asset: OneDiamondDashedRed,
-    //     alt: 'One Diamond Dashed Red'
-    //   },
-    //   {
-    //     amount: 1,
-    //     shape: 'diamond',
-    //     fill: 'dashed',
-    //     color: 'purple',
-    //     asset: OneDiamondDashedPurple,
-    //     alt: 'One Diamond Dashed Purple'
-    //   }
-    // ]
-
   }
 
   handleSelected( props ){
@@ -98,17 +77,18 @@ class App extends React.Component {
               ))}
             </div>
             <div className='columns three'>
-                <p>Map function written! now though, I think it make sense for 'selected' to be a prop, as it should be managed within the game. That makes sense, right? Because when I hit 3 cards (which will be triggered in the 'game manager' or whatever it ends up being called), I will need to dispatch the call for all the 'active' cards to be 'inactive'</p>
+                <p>think about this: when you click it, you can make a reference of the index or whatever with the game manager. Then, you can shoot through the array (after you've hit 3) and when you hit the index you can just check if true, then make false. perfecto! you will need to use isActive</p>
             </div>
           </div>
           <div className="row">
-              <p className="message">
-                {this.state.amount} | {this.state.shape} | {this.state.fill} | {this.state.color}
-              </p>
-
+            {this.state.hand.length > 0 ?
+                this.state.hand.map((card, index) => (
+                  <p className="message">{card.amount} | {card.shape} | {card.fill} | {card.color}</p>
+                )) :
+                <p>nothing selected</p>}
           </div>
-          <div className="row">
 
+          <div className="row">
             <ul>
               <li>I guess the goal is to output the three cards from a deck store now</li>
               <li>What I should do is turn the base data into proper objects store. Every card should be initialized in the store.. you don't need to create a method that renders everything.. it's kind of a waste of time? Unless it's super easy to code, that is.</li>

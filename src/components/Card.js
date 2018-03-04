@@ -5,10 +5,6 @@ class Card extends React.Component{
   constructor(props){
     super(props)
     this.handleSelectCard = this.handleSelectCard.bind(this)
-
-    // let selected = false;
-    // let cardClass = 'card-two'
-
     this.state = {
       selected: false,
       class: 'card',
@@ -31,9 +27,7 @@ class Card extends React.Component{
         class: 'card'
       }))
     }
-
-
-    this.props.showSelected(this.props)
+    this.props.handleSelected(this.props)
   }
 
   render(){

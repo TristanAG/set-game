@@ -1,37 +1,23 @@
 $color: #918498;
 
 h3{
-  color: $color;
+  color: #395f70;
 }
 
 .hotdogs{
   border: 2px solid green;
 }
 
-.card-two{
-  // -ms-transform: rotate(90deg); /* IE 9 */
-  //  -webkit-transform: rotate(90deg); /* Safari */
-  //  transform-origin: bottom right;
-  width: 188px;
+.card{
+
+  width: 120px;
   max-width: 100%;
 
+  &:hover{
+    cursor: pointer;
+  }
 }
 
-
-
-.card{
-  border: 2px solid lighten($color, 2%);
-  background-color: lighten($color, 38%);
-
-  width: 140px;
-  height: 68px;
-  margin: 22px;
-  text-align: center;
-
-  p{
-    margin-top: 16px;
-    letter-spacing: .22em;
-    font-size: 1.8em;
-
-  }
+.selected{
+  border: 2px solid purple;
 }

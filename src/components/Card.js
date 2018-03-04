@@ -11,7 +11,11 @@ class Card extends React.Component{
 
     this.state = {
       selected: false,
-      class: 'tacos'
+      class: 'card',
+      amount: props.amount,
+      shape: props.shape,
+      fill: props.fill,
+      color: props.color,
     }
   }
 
@@ -19,28 +23,26 @@ class Card extends React.Component{
     if(this.state.selected === false){
       this.setState(() => ({
         selected: true,
-        class: 'hotdogs'
+        class: 'card selected'
       }))
     } else {
       this.setState(() => ({
         selected: false,
-        class: 'tacos'
+        class: 'card'
       }))
     }
-    
-    console.log(this.state.selected)
+
+
     this.props.showSelected(this.props)
   }
 
   render(){
     return(
-      <div
-        onClick={this.handleSelectCard}
-        className={this.state.class}
-      >
+      <div>
         <p>{this.state.selected}</p>
           <img
-            className='card-two'
+            onClick={this.handleSelectCard}
+            className={this.state.class}
             src={this.props.asset}
             alt={this.props.altText}
           />

@@ -33,11 +33,11 @@ class App extends React.Component {
   handleSelected( props ){
     this.setState((prevState) => ({
       // selectedCards: prevState.selectedCards.concat(props),
-      fill: props.fill,
-      amount: props.amount,
-      color: props.color,
-      shape: props.shape,
-      alt: props.alt,
+      // fill: props.fill,
+      // amount: props.amount,
+      // color: props.color,
+      // shape: props.shape,
+      // alt: props.alt,
       hand: prevState.hand.concat({
         fill: props.fill,
         amount: props.amount,
@@ -95,6 +95,8 @@ class App extends React.Component {
 
           <div className="row">
             <ul>
+              <li>also tho, i can get started on the comparison stuff, and be sure to USE JEST to do it!</li>
+              <li>really tho, i should probably get the clear isActive state working first</li>
               <li>the big thing now is finding a way to clear all selected. a button / function could do that to test the method</li>
               <li><b>i need the selected status to be a prop then, right?</b></li>
               <li>i should use module package to display if set or !set</li>

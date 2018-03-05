@@ -62,6 +62,9 @@ class App extends React.Component {
           </div>
           <div className='row' style={{marginBottom: '80px'}}>
             <div className='columns three'>
+              {/*
+                can I use spread here to make things easier?
+                */}
               {cards.map((card, index) => (
                 <Card
                   handleSelected={this.handleSelected}
@@ -81,11 +84,13 @@ class App extends React.Component {
             </div>
           </div>
           <div className="row">
-            {this.state.hand.length > 0 ?
-                this.state.hand.map((card, index) => (
-                  <p className="message">{card.amount} | {card.shape} | {card.fill} | {card.color}</p>
-                )) :
-                <p>nothing selected</p>}
+            {
+              this.state.hand.length > 0
+              ? this.state.hand.map((card, index) => (
+                <p className="message">{card.amount} | {card.shape} | {card.fill} | {card.color}</p>
+              ))
+              : <p>nothing selected</p>
+            }
           </div>
 
           <div className="row">

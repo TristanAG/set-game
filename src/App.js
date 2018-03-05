@@ -37,11 +37,13 @@ class App extends React.Component {
       amount: props.amount,
       color: props.color,
       shape: props.shape,
+      alt: props.alt,
       hand: prevState.hand.concat({
         fill: props.fill,
         amount: props.amount,
         color: props.color,
         shape: props.shape,
+        alt: props.alt
       })
     }))
   }
@@ -62,20 +64,12 @@ class App extends React.Component {
           </div>
           <div className='row' style={{marginBottom: '80px'}}>
             <div className='columns three'>
-              {/*
-                can I use spread here to make things easier?
-                */}
-              {cards.map((card, index) => (
+              {cards.map((card) => (
                 <Card
                   handleSelected={this.handleSelected}
-                  asset={card.asset}
-                  amount={card.amount}
-                  shape={card.shape}
-                  fill={card.fill}
-                  color={card.color}
-                  alt={card.alt}
                   isActive={false}
-                  key={index}
+                  key={card.alt + '_hand'}
+                  {...card}
                 />
               ))}
             </div>
@@ -83,11 +77,17 @@ class App extends React.Component {
                 <p>think about this: when you click it, you can make a reference of the index or whatever with the game manager. Then, you can shoot through the array (after you've hit 3) and when you hit the index you can just check if true, then make false. perfecto! you will need to use isActive</p>
             </div>
           </div>
+          {/*
+            alright, so a bug fires here because when you unclick an item it lists the same key once again.
+            this will no longer be an issue when it stops at number 3, and then all selected cards are cleared
+            */}
           <div className="row">
             {
               this.state.hand.length > 0
-              ? this.state.hand.map((card, index) => (
-                <p className="message">{card.amount} | {card.shape} | {card.fill} | {card.color}</p>
+              ? this.state.hand.map((card, i) => (
+                <p className="message" key={card.alt + '_selected'}>
+                  {card.amount} | {card.shape} | {card.fill} | {card.color}
+                </p>
               ))
               : <p>nothing selected</p>
             }
@@ -95,19 +95,12 @@ class App extends React.Component {
 
           <div className="row">
             <ul>
-              <li>I guess the goal is to output the three cards from a deck store now</li>
-              <li>What I should do is turn the base data into proper objects store. Every card should be initialized in the store.. you don't need to create a method that renders everything.. it's kind of a waste of time? Unless it's super easy to code, that is.</li>
-
-              <li>it makes more sense to hard code it, because they are const objects</li>
-              <li>change name of 'show selected' function</li>
-              <li>display the total of amount of the two cards</li>
+              <li>the big thing now is finding a way to clear all selected. a button / function could do that to test the method</li>
+              <li><b>i need the selected status to be a prop then, right?</b></li>
               <li>i should use module package to display if set or !set</li>
               <li>i need to be able to load in some cards and eventually the full deck</li>
-              <li>i should be able to render the entire deck to the screen</li>
-              <li>not only do you need to map it to the component, but what you actually need to do is put all of the props into an object, right? that certainly sounds like a way better idea than passing around a ton of props... well... actually it could work</li>
               <li><a href="http://puzzles.setgame.com/set/index.html" target="_none">official rules</a></li>
             </ul>
-
           </div>
         </div>
       </div>

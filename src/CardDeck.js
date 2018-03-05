@@ -11,7 +11,7 @@ export default [
     fill: 'dashed',
     color: 'red',
     asset: OneDiamondDashedRed,
-    alt: 'One Diamond Dashed Red'
+    alt: 'OneDiamondDashedRed'
   },
   {
     amount: 1,
@@ -19,7 +19,7 @@ export default [
     fill: 'dashed',
     color: 'purple',
     asset: OneDiamondDashedPurple,
-    alt: 'One Diamond Dashed Purple'
+    alt: 'OneDiamondDashedPurple'
   },
   {
     amount: 1,
@@ -27,6 +27,6 @@ export default [
     fill: 'filled',
     color: 'green',
     asset: OneDiamondFilledGreen,
-    alt: 'One Diamond Filled Green'
+    alt: 'OneDiamondFilledGreen'
   }
 ]

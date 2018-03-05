@@ -10,7 +10,7 @@ h3{
 
 .card{
 
-  width: 180px;
+  width: 120px;
   max-width: 100%;
 
   &:hover{
@@ -21,8 +21,8 @@ h3{
 .selected{
   // border: 2px solid purple;
   -webkit-box-shadow: 0px 1px 23px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 1px 23px 0px rgba(0,0,0,0.75);
-box-shadow: 0px 1px 23px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 1px 23px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 1px 23px 0px rgba(0,0,0,0.75);
 }
 
 li, .message{

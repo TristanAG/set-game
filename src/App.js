@@ -32,12 +32,6 @@ class App extends React.Component {
 
   handleSelected( props ){
     this.setState((prevState) => ({
-      // selectedCards: prevState.selectedCards.concat(props),
-      // fill: props.fill,
-      // amount: props.amount,
-      // color: props.color,
-      // shape: props.shape,
-      // alt: props.alt,
       hand: prevState.hand.concat({
         fill: props.fill,
         amount: props.amount,
@@ -50,17 +44,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <div
-        style={{
-          backgroundColor: '',
-          padding: '22px',
-          height: '800px'
-        }}
-      >
+      <div className='main-container'>
         <div className="container">
           <div className="row">
             <h3>set-game</h3>
-            <p className="message">there are <i>8</i> sets remaining</p>
           </div>
           <div className='row' style={{marginBottom: '80px'}}>
             <div className='columns three'>

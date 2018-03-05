@@ -4,6 +4,10 @@ h3 {
 .hotdogs {
   border: 2px solid green; }
 
+.main-container {
+  padding: 22px;
+  height: 800px; }
+
 .card {
   width: 120px;
   max-width: 100%; }

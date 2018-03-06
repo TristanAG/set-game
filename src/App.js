@@ -42,6 +42,12 @@ class App extends React.Component {
     }))
   }
 
+  // showCards(){
+  //
+  // }
+
+
+
   render() {
     return (
       <div className='main-container'>
